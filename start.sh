@@ -2,7 +2,7 @@
 
 set -e
 
-s3fs $AWSBUCKET /s3 --ouse_cache=/tmp
+s3fs $AWSBUCKET /s3 -ouse_cache=/tmp
 
 [ ! -L /.sync ] && ln -sf /data /.sync
 
