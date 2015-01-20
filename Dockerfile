@@ -5,7 +5,7 @@ FROM ubuntu:trusty
 
 MAINTAINER Max Garmash <max@garmash.org>
 
-ENV LANG en_US.UTF-8
+ENV LANG ru_RU.UTF-8
 RUN locale-gen $LANG
 
 RUN apt-get update -qq
@@ -16,9 +16,9 @@ RUN tar xf /btsync.tar.gz && rm /btsync.tar.gz
 
 ADD start.sh /start.sh
 
-RUN wget https://github.com/s3fs-fuse/s3fs-fuse/archive/v1.77.tar.gz -O /usr/src/v1.77.tar.gz
-RUN tar xvz -C /usr/src -f /usr/src/v1.77.tar.gz
-RUN cd /usr/src/s3fs-fuse-1.77 && ./autogen.sh && ./configure --prefix=/usr && make && make install
+RUN wget https://github.com/s3fs-fuse/s3fs-fuse/archive/v1.78.tar.gz -O /usr/src/v1.78.tar.gz
+RUN tar xvz -C /usr/src -f /usr/src/v1.78.tar.gz
+RUN cd /usr/src/s3fs-fuse-1.78 && ./autogen.sh && ./configure --prefix=/usr && make && make install
 
 RUN mkdir /s3
 
